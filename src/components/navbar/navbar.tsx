@@ -11,7 +11,37 @@ import { useAtom } from "jotai";
 import { userAtom } from '../../store/user'
 
 export default function Navbar() {
-  const [toggleSearch,setToggleSearch] = useState(false)
+  const [toggleSearch,setToggleSearch] = useState(true)
+  // État pour savoir si le scroll est en cours
+  const [isScrolling, setIsScrolling] = useState(true);
+
+  // Utiliser useEffect pour écouter l'événement de défilement
+  useEffect(() => {
+    const handleScroll = () => {
+      // Si l'utilisateur a cliqué sur un bouton récemment, on ignore le scroll
+      if (isScrolling) {
+        if (window.scrollY >= 1) {
+          setToggleSearch(false); // Fermer la recherche si on scrolle vers le bas
+        } else {
+          setToggleSearch(true); // Ouvrir si on est en haut de la page
+        }
+      }
+    };
+
+    // Ajouter l'écouteur d'événement pour l'événement "scroll"
+    window.addEventListener("scroll", handleScroll);
+
+    // Nettoyer l'écouteur d'événement lorsque le composant est démonté
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isScrolling]); // Ajouter isScrolling comme dépendance pour re-render lors de son changement
+
+  // Fonction pour basculer toggleSearch manuellement
+  const handleToggleSearch = () => {
+    setToggleSearch(!toggleSearch); // Inverser l'état de toggleSearch
+    setIsScrolling(false); // Empêcher immédiatement le scroll de modifier l'état
+  };
 
   return (
     <>
@@ -26,9 +56,9 @@ export default function Navbar() {
         </Link>
 
         <div>
-          <button className="button-no-color" onClick={() => setToggleSearch(!toggleSearch)}>
+          <button className={`${toggleSearch ? "hidden" : "button-no-color "}`} onClick={() => handleToggleSearch()}>
             <span>Rechercher une séance de sport</span>
-            <div className="rounded-full bg-blue-500 h-full w-6" >
+            <div className="rounded-full bg-blue-500 h-full w-8">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="h-full p-2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
               </svg>
@@ -73,7 +103,7 @@ export default function Navbar() {
             </div>
           </form>
 
-          <Link to="/" className="button-primary-small">Proposer une séance</Link>
+          <Link to="/" className={`${toggleSearch ? "hidden" : "button-primary-small"}`}>Proposer une séance</Link>
         </div>
 
         <button className="flex justify-center">
