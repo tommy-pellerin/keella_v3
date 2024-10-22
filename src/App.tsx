@@ -5,8 +5,6 @@ import AppRoutes from './components/static/routes';
 import Navbar from './components/navbar/navbar';
 import Footer from './components/static/footer';
 
-// style
-import './App.css'
 
 function App() {
   
@@ -14,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="flex flex-col min-h-screen">
-        <header>
+        <header className='sticky top-0'>
           <Navbar />
           <ToastContainer/>
         </header>

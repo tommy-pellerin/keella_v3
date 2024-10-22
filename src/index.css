@@ -203,8 +203,9 @@ p {
   font-size: 0.875rem; /* text-sm */
   font-weight: 600; /* font-semibold */
   border-radius: 0.5rem; /* rounded-lg */
-  border: none; /* border border-transparent */
-  color: white; /* text-white */
+  border: 1px solid grey; /* border border-transparent */
+  color: #3B3B3B; /* text-white */
+
 }
 
 
