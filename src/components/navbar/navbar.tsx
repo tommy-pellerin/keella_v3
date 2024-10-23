@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import SignOut from "../auth/sign-out";
 import { useEffect, useState } from 'react';
+
+import SignOut from "../auth/sign-out";
 import { getData } from '../../services/data-fetch';
 
 //Styles
@@ -9,8 +10,10 @@ import logoKeella from '../../assets/images/logo_keella.png';
 //Atoms
 import { useAtom } from "jotai";
 import { userAtom } from '../../store/user'
+import { navModalAtom } from '../../store/navModalAtom';
 
 export default function Navbar() {
+  const [,setIsNavModalOpenned] = useAtom(navModalAtom)
   const [toggleSearch,setToggleSearch] = useState(true)
   // État pour savoir si le scroll est en cours
   const [isScrolling, setIsScrolling] = useState(true);
@@ -39,12 +42,16 @@ export default function Navbar() {
 
   // Fonction pour basculer toggleSearch manuellement
   const handleToggleSearch = () => {
+    setIsNavModalOpenned(true); // Ouvrir le modal
     setToggleSearch(!toggleSearch); // Inverser l'état de toggleSearch
     setIsScrolling(false); // Empêcher immédiatement le scroll de modifier l'état
   };
 
+
   return (
     <>
+      
+
       <div className="flex justify-between items-center bg-white py-1 shadow-lg px-10">
 
         <Link to="/" className="flex flex-shrink-0 items-center">
