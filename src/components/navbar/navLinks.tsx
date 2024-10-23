@@ -14,7 +14,7 @@ export default function NavLinks() {
     <>
       {links.map((link) => {
         return (
-          <li key={link.name} className="list-none hover:bg-gray-400 p-3">
+          <li key={link.name} className="list-none hover:bg-gray-400 p-3 md:pr-20">
             <a
               
               href={link.href}
