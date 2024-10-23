@@ -66,6 +66,9 @@ export default function Navbar() {
     setIsScrolling(false); // Empêcher immédiatement le scroll de modifier l'état
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
 
@@ -79,7 +82,7 @@ export default function Navbar() {
         />
       </Link>
 
-      <div>
+      <div className="hidden md:flex justify-center items-center gap-5">
         <button className={`${toggleSearch ? "hidden" : "button-no-color "}`} onClick={() => handleToggleSearch()}>
           <span>Rechercher une séance de sport</span>
           <div className="rounded-full bg-blue-500 h-full w-8">
@@ -94,7 +97,7 @@ export default function Navbar() {
         <Link to="/" className={`${toggleSearch ? "hidden" : "button-primary-small"}`}>Proposer une séance</Link>
       </div>
       
-        <button className="flex justify-center items-center border border-gray-500 rounded-xl" onClick={()=>setIsMenuOpen(!isMenuOpen)}>
+        <button className="flex justify-center items-center border border-gray-500 rounded-xl" onClick={()=>toggleMenu()}>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -109,7 +112,7 @@ export default function Navbar() {
           <div 
             className="absolute top-full left-0 w-full bg-white rounded-lg shadow-lg py-2 text-center md:w-auto md:right-10 md:top-full md:left-auto md:text-left"
           >
-            <NavLinks /> {/* Composant pour les liens du menu */}
+            <NavLinks closeMenu={toggleMenu}/>
           </div>
         )}
 
