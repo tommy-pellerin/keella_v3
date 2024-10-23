@@ -8,6 +8,7 @@ export default function NavModal() {
 
   const closeNavModal = () => {
     setIsNavModalOpenned(false)
+    
   }
 
   return (
