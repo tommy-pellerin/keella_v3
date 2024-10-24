@@ -1,0 +1,27 @@
+/*ouvrir et fermer une carte*/
+.expendableButton {
+  transition: 0.3s ease-in-out;
+}
+
+.expendableBox-content {
+  transition: max-height 0.5s ease-out, opacity 0.5s ease;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+.expendableBox-expended {
+  max-height: 500px;
+  opacity: 1;
+  overflow: visible;
+  transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
+}
+
+/*animation feedback HOME*/
+.fadeIn {
+  animation: fadeInAnimation 0.5s ease-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}

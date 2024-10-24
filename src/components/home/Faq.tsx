@@ -18,16 +18,16 @@ const Faq = () => {
         {[
           {
             title: 'Concept',
-            content: 'Keella est une plateforme innovante qui permet aux utilisateurs de trouver et de réserver des espaces sportifs privés ou des séances d\'entraînement organisées par des particuliers, tout comme une célèbre plateforme permet de trouver des logements temporaires. Cette approche démocratise l\'accès aux installations sportives et favorise une communauté active et engagée.'
+            content: 'Keella est une plateforme innovante qui permet aux utilisateurs de trouver et de réserver des espaces sportifs privés ou des séances d\'entraînement organisées par des particuliers. Cette approche démocratise l\'accès aux installations sportives et favorise une communauté active et engagée.'
           },
           {
-            title: 'Utilisation',
-            content: 'La plateforme fonctionne sur un système de paiement par crédits, où les utilisateurs achètent des crédits qu\'ils peuvent ensuite utiliser pour réserver des activités sportives. Après avoir choisi une séance, ils attendent la confirmation de la réservation et la validation par l\'hôte. Les utilisateurs peuvent également créer leurs propres séances de workout, invitant d\'autres à se joindre à eux.'
+            title: "Comment contacter l'hote de la séance ?",
+            content: "Pour contacter un hote, connectez-vous sur votre compte Keella puis cliquez sur 'Contacter l'hôte' sur la page de l'annonce qui vous intéresse."
           },
           {
-            title: 'Retour expérience',
-            content: 'Après avoir participé à une activité, les utilisateurs sont encouragés à laisser des commentaires et à noter leur expérience. Cela aide non seulement les autres utilisateurs à faire des choix éclairés, mais contribue également à maintenir un niveau de qualité élevé sur la plateforme. Les retours d\'expérience sont essentiels pour bâtir une communauté de confiance.'
-          }
+            title: 'La location est-elle assurée ? Que se passe-t-il en cas de problème ?',
+            content: "Pour l'instant, la plateforme est mise à disposition gratuitement des utilisateurs et ne génère donc aucun revenu. Les utilisateurs sont invités à être responsables de leurs actions."
+          },
         ].map((faq, index) => (
           <div key={index} className='mb-2'>
             <button

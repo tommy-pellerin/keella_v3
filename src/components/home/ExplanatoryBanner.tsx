@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import banner from '../../assets/images/banner.png';
 import { Link } from 'react-router-dom';
+import "./home.css"
 
 const ExplanatoryBanner = () => {
   const [isEquipmentOpen, setIsEquipmentOpen] = useState(false);
@@ -22,7 +23,7 @@ const ExplanatoryBanner = () => {
               className="font-bold text-lg w-full expendableButton"
               onClick={() => setIsEquipmentOpen(!isEquipmentOpen)}
             >
-              💪 Pour les sportifs
+              💪 Je veux faire du sport
             </button>
               <div className={`mt-2 expendableBox-content ${isEquipmentOpen ? 'expendableBox-expended'  : ''}`}>
                 <p>
@@ -41,12 +42,19 @@ const ExplanatoryBanner = () => {
               className="font-bold text-lg w-full expendableButton"
               onClick={() => setIsUsageOpen(!isUsageOpen)}
             >
-              🏠 Pour les hôtes
+              🏠 Je partage mon matériel
             </button>
               <div className={`mt-2 expendableBox-content ${isUsageOpen ? 'expendableBox-expended'  : ''}`}>
                 <p className="mt-2">
                   En tant que hôte, créez des activités uniques ou proposez votre matériel à la location. 
-                  C&apos;est une excellente manière de gagner un revenu supplémentaire tout en aidant les autres à découvrir de nouveaux sports.
+                </p>
+                
+                <p className="mt-2">
+                  Définissez vous-même le prix et le nombre de personnes à accueillir. Ajustez vos disponibilités à votre convenance.
+                </p>
+
+                <p className="mt-2">
+                  C&apos;est une excellente manière de gagner un revenu supplémentaire tout en contribuant à la bonne santé des autres.
                 </p>
                 
                 <Link to="/workouts/create" className="button-primary-large text-white font-bold py-2 px-4 rounded block mt-4">
