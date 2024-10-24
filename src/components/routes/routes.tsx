@@ -7,10 +7,13 @@ import SignUp from "../authentication/signUp";
 import SignIn from "../authentication/signIn";
 import ForgetPassword from "../authentication/forgetPassword";
 
-import MyAccount from "../user/myAccount";
+import AccountSettings from "../user/accountSettings";
+import PersonalInfos from "../user/personalInfos";
+// import Profile from "../user/profile";
+// import EditProfile from "../user/editProfile";
 
-import WorkoutIndex from "../workout/index";
-import WorkoutShow from "../workout/show";
+// import WorkoutIndex from "../workout/index";
+// import WorkoutShow from "../workout/show";
 import WorkoutForm from "../workout/workoutForm";
 
 import TermsOfUse from "../static/termsOfUse";
@@ -18,6 +21,8 @@ import LegalNotices from "../static/legalNotices";
 import PrivacyPolicy from "../static/privacyPolicy";
 import Help from "../static/help";
 import Host from "../static/host";
+
+
 
 
 // Atom
@@ -34,7 +39,13 @@ export default function AppRoutes() {
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/forget-password" element={<ForgetPassword />} />
 
-      <Route path="/my-account" element={<MyAccount />} />
+      {/* <Route path="/profile/:user_id" element={<Profile/>} /> */}
+      {/* <Route path="/profile/:user_id/edit" element={<EditProfile/>} /> */}
+      <Route path="/account-settings" element={<AccountSettings />} />
+      <Route path="/account-settings/personal-infos" element={<PersonalInfos />} />
+      {/* <Route path="/account-settings/:user_id/my-reservation" element={<ProfileReservation />} />
+      <Route path="/account-settings/:user_id/hosted_workouts" element={<HostedWorkoutHistory/>} /> */}
+
 
       {/* <Route path="/workouts" element={<WorkoutIndex />} /> */}
       {/* <Route path="/workouts/:workout_id" element={<WorkoutShow />} /> */}

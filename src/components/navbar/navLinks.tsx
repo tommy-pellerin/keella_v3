@@ -13,9 +13,9 @@ const notAuthLinks = [
 ];
 const authLinks = [
   { name: 'Messages', href: '/messages' },
-  { name: 'Mes réservations', href: '/my-account' },
-  { name: 'Mon compte', href: '/my-account' },
-  { name: 'Mes annonces', href: '/my-account'},
+  { name: 'Mes réservations', href: '/account-settings' },
+  { name: 'Mon compte', href: '/account-settings' },
+  { name: 'Mes annonces', href: '/account-settings'},
   { name: 'Déconnexion', href: '/'},
 ];
 
