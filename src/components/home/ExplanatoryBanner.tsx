@@ -42,11 +42,11 @@ const ExplanatoryBanner = () => {
               className="font-bold text-lg w-full expendableButton"
               onClick={() => setIsUsageOpen(!isUsageOpen)}
             >
-              🏠 Je partage mon matériel
+              🏠 Je partage ma salle de sport avec matériels
             </button>
               <div className={`mt-2 expendableBox-content ${isUsageOpen ? 'expendableBox-expended'  : ''}`}>
                 <p className="mt-2">
-                  En tant que hôte, créez des activités uniques ou proposez votre matériel à la location. 
+                  En tant que hôte, créez des activités uniques ou proposez votre salle de sport avec les matériels à la location. 
                 </p>
                 
                 <p className="mt-2">

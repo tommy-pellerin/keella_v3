@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // Depending on the size of the application, this would be stored in a database.
 const links = [
   { name: 'Trouver une séance', href: '/workouts', authRequired: false },
-  { name: 'Proposer une séance', href: '/', authRequired: false },
+  { name: 'Proposer une séance', href: '/host', authRequired: false },
   { name: 'Inscription', href: '/sign-up', authRequired: false },
   { name: 'Connexion', href: '/sign-in', authRequired: false },
   { name: 'Messages', href: '/messages', authRequired: true },
