@@ -1,45 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { getData } from '../../services/data-fetch';
-import { formatDate, formatTime, formatDuration } from '../../services/time-fixes';
-import LoadingSpinner from '../static/LoadingSpinner';
+import LoadingSpinner from '../loadingSpinner/LoadingSpinner';
 
 function WorkoutList() {
     const [workouts, setWorkouts] = useState([]);
-    const [visibleCount, setVisibleCount] = useState(6); // Initial visible count
+    // const [visibleCount, setVisibleCount] = useState(6); // Initial visible count
     const [isLoading, setIsLoading] = useState(false);
     const location = useLocation();
 
-    const fetchWorkouts = async (query = '', resetVisibleCount = false) => {
+    const fetchWorkouts = async () => {
         setIsLoading(true);
         try {
-            let count = visibleCount; 
-            if (query) {
-                const data = await getData(`/workouts?${query}&sort=start_date&page_size=20`);
-                setWorkouts(data);
-                count = data.length; 
-            } else {
-                const data = await getData(`/workouts?sort=start_date&page_size=${visibleCount}`);
-                setWorkouts(data);
-            }
-            if (resetVisibleCount) setVisibleCount(6);
+            const response = await fetch(`http://localhost:3000/workouts`);
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            
+            const data = await response.json(); // Convertir la réponse en JSON
+            console.log(data);
+            setWorkouts(data); // Définir les données converties en JSON comme état
         } catch (error) {
-            console.error(error);
+            console.error("Fetch error:", error);
         } finally {
             setIsLoading(false);
         }
     };
 
     useEffect(() => {
-        const query = location.search ? location.search.slice(1) : '';
-        fetchWorkouts(query, true);
-    }, [location.search]);
+        fetchWorkouts();
+    }, []);
 
-    useEffect(() => {
-        if (!location.search) {
-            fetchWorkouts();
-        }
-    }, [visibleCount]);
 
     const loadMore = () => setVisibleCount(prevCount => prevCount + 3);
 
@@ -59,10 +47,10 @@ function WorkoutList() {
                                 <p className="mt-1 text-gray-500 text-description">{workout.description}</p>
                                 <ul>
                                     <li className="mt-1 text-gray-500">Prix : {workout.price} €</li>
-                                    <li className="mt-1 text-gray-500">Durée : {formatDuration(workout.duration)}</li>
+                                    <li className="mt-1 text-gray-500">Durée : {(workout.duration)}</li>
                                     <li className="mt-1 text-gray-500">Nombre de place total : {workout.max_participants}</li>
-                                    <li className="mt-1 text-gray-500">Date : {formatDate(workout.start_date)}</li>
-                                    <li className="mt-1 text-gray-500">Heure : {formatTime(workout.start_date)}</li>
+                                    <li className="mt-1 text-gray-500">Date : {(workout.start_date)}</li>
+                                    <li className="mt-1 text-gray-500">Heure : {(workout.start_date)}</li>
                                 </ul>
                                 {workout.available_places > 0
                                     ? <button className='button-primary-small mt-3'>{workout.available_places} places disponible</button>

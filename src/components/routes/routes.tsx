@@ -17,7 +17,7 @@ import Privacy from "../user/privacy";
 // import EditProfile from "../user/editProfile";
 
 // workouts
-// import WorkoutIndex from "../workout/index";
+import WorkoutIndex from "../workout";
 // import WorkoutShow from "../workout/show";
 import WorkoutForm from "../workout/workoutForm";
 
@@ -29,6 +29,7 @@ import Host from "../static/host";
 
 // help
 import Help from "../help/help";
+
 
 // Atom
 // import { useAtom } from "jotai";
@@ -54,7 +55,7 @@ export default function AppRoutes() {
       <Route path="/account-settings/:user_id/hosted_workouts" element={<HostedWorkoutHistory/>} /> */}
 
 
-      {/* <Route path="/workouts" element={<WorkoutIndex />} /> */}
+      <Route path="/workouts" element={<WorkoutIndex />} />
       {/* <Route path="/workouts/:workout_id" element={<WorkoutShow />} /> */}
       <Route path="/workouts/create" element={<WorkoutForm />} />
       <Route path="/workouts/:workout_id/edit" element={<WorkoutForm />}/>

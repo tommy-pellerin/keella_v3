@@ -1,7 +1,6 @@
-import React from 'react';
-import WorkoutList from './workoutList';
-import SearchWorkout from './searchWorkout';
 import { Helmet } from 'react-helmet';
+import WorkoutList from './workoutList';
+// import SearchWorkout from './searchWorkout';
 
 function WorkoutIndex() {
     return (
@@ -11,7 +10,7 @@ function WorkoutIndex() {
                 <meta name="description" content="La liste de tous les workouts" />
             </Helmet>
             <div>
-                <SearchWorkout />
+                {/* <SearchWorkout /> */}
                 <WorkoutList />
             </div>
         </>
