@@ -7,28 +7,32 @@ import SignUp from "../authentication/signUp";
 import SignIn from "../authentication/signIn";
 import ForgetPassword from "../authentication/forgetPassword";
 
+// user - settings
 import AccountSettings from "../user/accountSettings";
 import PersonalInfos from "../user/personalInfos";
+import PaymentMethods from "../user/paymentMethods";
+import ChangePassword from "../user/changePassword";
+import Privacy from "../user/privacy";
 // import Profile from "../user/profile";
 // import EditProfile from "../user/editProfile";
 
+// workouts
 // import WorkoutIndex from "../workout/index";
 // import WorkoutShow from "../workout/show";
 import WorkoutForm from "../workout/workoutForm";
 
+// statics
 import TermsOfUse from "../static/termsOfUse";
 import LegalNotices from "../static/legalNotices";
 import PrivacyPolicy from "../static/privacyPolicy";
-import Help from "../static/help";
 import Host from "../static/host";
 
-
-
+// help
+import Help from "../help/help";
 
 // Atom
 // import { useAtom } from "jotai";
 // import { userAtom } from "../../store/user";
-
 
 export default function AppRoutes() {
 
@@ -43,6 +47,9 @@ export default function AppRoutes() {
       {/* <Route path="/profile/:user_id/edit" element={<EditProfile/>} /> */}
       <Route path="/account-settings" element={<AccountSettings />} />
       <Route path="/account-settings/personal-infos" element={<PersonalInfos />} />
+      <Route path="/account-settings/security" element={<ChangePassword />} />
+      <Route path="/account-settings/privacy" element={<Privacy/>} />
+      <Route path="/account-settings/payment-methods" element={<PaymentMethods/>} />
       {/* <Route path="/account-settings/:user_id/my-reservation" element={<ProfileReservation />} />
       <Route path="/account-settings/:user_id/hosted_workouts" element={<HostedWorkoutHistory/>} /> */}
 
@@ -51,6 +58,8 @@ export default function AppRoutes() {
       {/* <Route path="/workouts/:workout_id" element={<WorkoutShow />} /> */}
       <Route path="/workouts/create" element={<WorkoutForm />} />
       <Route path="/workouts/:workout_id/edit" element={<WorkoutForm />}/>
+
+
 
       <Route path="/host" element={<Host />} />
       <Route path="/terms-of-use" element={<TermsOfUse />} />

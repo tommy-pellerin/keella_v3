@@ -31,7 +31,7 @@ const ExplanatoryBanner = () => {
                   où que vous soyez. Parfait pour essayer de nouveaux sports ou pour des séances de sport lors de vos voyages.
                 </p>
                 <Link to="/workouts" className="button-primary-large text-white font-bold py-2 px-4 rounded block mt-4">
-                  Voir les Workouts
+                  Voir les séances
                 </Link>
               </div>
           </div>
@@ -56,10 +56,14 @@ const ExplanatoryBanner = () => {
                 <p className="mt-2">
                   C&apos;est une excellente manière de gagner un revenu supplémentaire tout en contribuant à la bonne santé des autres.
                 </p>
-                
-                <Link to="/workouts/create" className="button-primary-large text-white font-bold py-2 px-4 rounded block mt-4">
-                  Créer un Workout
-                </Link>
+                <div className='flex flex-grow gap-1'>
+                  <Link to="/host" className="button-primary-large text-white font-bold py-2 px-4 rounded block mt-4">
+                    Plus de détails
+                  </Link>
+                  <Link to="/workouts/create" className="button-primary-large text-white font-bold py-2 px-4 rounded block mt-4">
+                    Proposer une séance
+                  </Link>
+                </div>                
               </div>
           </div>
         </div>

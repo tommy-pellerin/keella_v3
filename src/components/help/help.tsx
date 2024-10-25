@@ -7,101 +7,19 @@ const Help = () => {
         <meta name="description" content="Aide et questions fréquentes" />
       </Helmet>
       <div className="container mx-auto my-5">
-        <div className="background-blue-500">
-          <h1 className="text-center">Aide</h1>
-        </div>
-        <div className="flex flex-wrap mt-1 mb-5">
-          <div className="w-full md:w-1/2 p-2">
-            <div className="h-full p-5 rounded-lg shadow-lg bg-gray-50">
-              <div>
-                <h5 className="text-center text-lg font-semibold mb-4">
-                  Je suis propriétaire
-                </h5>
-                <div>
-                  <p>1. Je dépose mon annonce gratuitement sur la plateforme</p>
-                  <p>
-                    Cliquez sur &quot;Créer une annonce&quot; (présent dans le
-                    menu) pour déposer votre annonce en un clic. Ajoutez les
-                    détails de vos équipements et fixez vous-même le prix de la
-                    location. N&apos;oubliez pas d&apos;y insérer quelques
-                    photos !
-                  </p>
-                  <p>2. Je reçois des demandes de réservation</p>
-                  <p>
-                    Dès que vous recevez une demande, vous avez la possibilité
-                    d&apos;accepter ou de refuser celle-ci en fonction de vos
-                    disponibilités.
-                  </p>
-                  <p> 3. J&apos;accueille les sportifs</p>
-                  <p>
-                    Le jour venu, vous accueillez les locataires pour
-                    qu&apos;ils puissent disposer librement des équipements.
-                  </p>
-                  <p>4. Je perçois le règlement</p>
-                  <p>
-                    Vous recevez automatiquement le montant de la transaction
-                    sur votre compte bancaire dans un délai de 3 à 10 jours.
-                  </p>
-                  <p>5. Je laisse un avis sur la plateforme</p>
-                  <p>
-                    Une fois la location effectuée, vous avez la possibilité de
-                    laisser un commentaire pour faire part de votre expérience.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="w-full md:w-1/2 p-2">
-            <div className="h-full p-5 rounded-lg shadow-lg bg-gray-50">
-              <div>
-                <h5 className="text-center text-lg font-semibold mb-4">
-                  Je suis locataire
-                </h5>
-                <div>
-                  <p>1. Je cherche des équipements</p>
-                  <p>
-                    Entrez la localisation souhaitée dans la barre de recherche
-                    et sélectionnez les équipements dont vous avez besoin. Vous
-                    avez la possibilité de voir le profil du propriétaire afin
-                    de voir des informations supplémentaires.
-                  </p>
-                  <p>2. Je recharge mes crédits</p>
-                  <p>
-                    Dans la version actuelle, Keella utilise un systeme de
-                    crédits internes. Les locataires doivent acheter les crédits
-                    pour pouvoir réserver.
-                  </p>
-                  <p>2. Je réserve en ligne</p>
-                  <p>
-                    Réservez les équipements ou l&apos;infrastructure en
-                    sélectionnant la date de la location. Vous ne serez pas
-                    facturé immédiatement.
-                  </p>
-                  <p>3. Je prépare ma venue</p>
-                  <p>
-                    Une fois votre demande de réservation acceptée, vous pourrez
-                    prendre connaissance de l&apos;adresse exacte de la
-                    location. Il ne vous reste plus qu&apos;à préparer vos
-                    muscles !
-                  </p>
-                  <p>4. Je profite de ma séance de sport</p>
-                  <p>
-                    Le jour J est arrivé ! Profitez d&apos;une séance de sport
-                    avec un matériel de qualité.
-                  </p>
-                  <p>5. Je laisse un avis sur la plateforme</p>
-                  <p>
-                    C&apos;est déjà fini... N&apos;hésitez pas à laisser un
-                    commentaire sur la qualité de l&apos;accueil que vous avez
-                    reçu.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="background-blue-500">
-          <h1 className="text-center">F.A.Q</h1>
+        <div className="background-blue-500 text-center">
+          <h1>Aide</h1>
+          <form>
+            <label>
+              <input type="text" name="search" placeholder="Recherche par mot clé">
+              </input>
+              <button className="rounded-full bg-blue-500 h-full w-8">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="h-full p-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+              </button>
+            </label>
+          </form>
         </div>
         <h3 className="text-center m-4">
           Quelques questions qui reviennent souvent
