@@ -20,7 +20,7 @@ const authLinks = [
 ];
 
 export default function NavLinks({ closeMenu }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(true); // Simulate the auth state
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Simulate the auth state
 
   return (
     <ul>

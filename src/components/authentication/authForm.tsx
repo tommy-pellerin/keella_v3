@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useMatch, Link } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 export default function AuthForm({ onSubmit, buttonText }) {
   const [email, setEmail] = useState("");
@@ -8,13 +9,17 @@ export default function AuthForm({ onSubmit, buttonText }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("")
-
+  
   //check if is signing up
   const match = useMatch("/sign-up");
   const isSigningUp = match ? true : false;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!email || !password) {
+      toast.error("Veuillez remplir tous les champs.");
+      return;
+    }
     await onSubmit({ firstName, lastName, email, password, phone });
   };
 
